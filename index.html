@@ -39,6 +39,35 @@
 </head>
 
 <body>
+ <?php
+if(isset($_POST['submitBtn']))
+{
+
+  $name=$_POST['name'];
+  $email=$_POST['number'];
+  $email=$_POST['email_id'];
+  $content=$_POST['body'];
+  
+  $content.= "\n\n\nThanks And Regards,\n".$email;
+  
+
+    $email_to="jshdhage@gmail.com";
+    $headers = 'From: '.$email."\r\n".
+    'Reply-To: '.$email."\r\n" .
+    'X-Mailer: PHP/' . phpversion();
+    //$mail = mail($email_to, $subject, $content, $headers); 
+    if(mail($email_to, $subject, $content, $headers)){
+	$result='<div class="alert alert-success">Thank You! I will be in touch</div>';
+    }else{
+    	$result='<div class="alert alert-danger">Sorry there was an error sending your message. Please try again later</div>';
+    }
+    
+
+    
+}
+
+
+?>
 <!--     <div id="overlayer"></div>
     <div class="text-center">
         <span class="loader">
@@ -696,35 +725,7 @@
     <script src="jquery.typer.js"></script>
     <!-- main.js -->
     <script src="main.js"></script>
-    <?php
-if(isset($_POST['submitBtn']))
-{
-
-  $name=$_POST['name'];
-  $email=$_POST['number'];
-  $email=$_POST['email_id'];
-  $content=$_POST['body'];
-  
-  $content.= "\n\n\nThanks And Regards,\n".$email;
-  
-
-    $email_to="jshdhage@gmail.com";
-    $headers = 'From: '.$email."\r\n".
-    'Reply-To: '.$email."\r\n" .
-    'X-Mailer: PHP/' . phpversion();
-    //$mail = mail($email_to, $subject, $content, $headers); 
-    if(mail($email_to, $subject, $content, $headers)){
-	$result='<div class="alert alert-success">Thank You! I will be in touch</div>';
-    }else{
-    	$result='<div class="alert alert-danger">Sorry there was an error sending your message. Please try again later</div>';
-    }
-    
-
-    
-}
-
-
-?>
+   
 </body>
 
 </html>
