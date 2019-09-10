@@ -641,18 +641,18 @@
                     <div class="contact_form">
                         <form>
                             <div class="form-group mt-3">
-                                <input name="name" placeholder="Enter your name" class="form-control" type="text" autocomplete="off" required>
+                                <input name="name" id="name" placeholder="Enter your name" class="form-control" type="text" autocomplete="off" required>
                             </div>
                             <div class="form-group mt-3">
-                                <input name="Phone" placeholder="Enter your number" class="form-control" type="number" autocomplete="off" required>
+                                <input name="Phone" id="number" placeholder="Enter your number" class="form-control" type="number" autocomplete="off" required>
                             </div>
                             <div class="form-group">
-                                <input name="Email" placeholder="Enter your Email" class="form-control" type="email" autocomplete="off" required>
+                                <input name="Email" id="email_id" placeholder="Enter your Email" class="form-control" type="email" autocomplete="off" required>
                             </div>
                             <div class="form-group">
-                                <textarea name="comment" placeholder="Describe your project" rows="3" class="form-control" autocomplete="off" required></textarea>
+                                <textarea name="comment" id="subject" placeholder="Describe your project" rows="3" class="form-control" autocomplete="off" required></textarea>
                             </div>
-                            <button type="submit">Send</button>
+                            <button type="submit" name="submitBtn">Send</button>
                         </form>
                     </div>
                 </div>
@@ -696,6 +696,36 @@
     <script src="jquery.typer.js"></script>
     <!-- main.js -->
     <script src="main.js"></script>
+    <?php
+if(isset($_POST['submitBtn']))
+{
+
+  $name=$_POST['name'];
+  $email=$_POST['number'];
+  $email=$_POST['email_id'];
+  $subject=$_POST['subject'];
+  $content=$_POST['body'];
+  
+  $content.= "\n\n\nThanks And Regards,\n".$email;
+  
+
+    $email_to="admin@omsoftware.org";
+    $headers = 'From: '.$email."\r\n".
+    'Reply-To: '.$email."\r\n" .
+    'X-Mailer: PHP/' . phpversion();
+    //$mail = mail($email_to, $subject, $content, $headers); 
+    if(mail($email_to, $subject, $content, $headers)){
+	$result='<div class="alert alert-success">Thank You! I will be in touch</div>';
+    }else{
+    	$result='<div class="alert alert-danger">Sorry there was an error sending your message. Please try again later</div>';
+    }
+    
+
+    
+}
+
+
+?>
 </body>
 
 </html>
