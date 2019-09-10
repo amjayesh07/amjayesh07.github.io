@@ -720,7 +720,7 @@ nav .navbar-nav li:last-child {
 }
 
 .services_oxes {
-    margin-bottom: 70px;
+    margin-bottom: 50px;
     padding: 25px;
     position: relative;
     background: #ffffff;
@@ -728,6 +728,7 @@ nav .navbar-nav li:last-child {
     -webkit-transition: all linear .3s;
     -o-transition: all linear .3s;
     transition: all linear .3s;
+    min-height: 222px;
 }
 
 .service_icon {
@@ -908,7 +909,7 @@ nav .navbar-nav li:last-child {
 }
 
 .img_box img {
-    width: 400px;
+    width: 320px;
 }
 
 .font-image {
@@ -924,7 +925,7 @@ nav .navbar-nav li:last-child {
 }
 
 .back-image img {
-    width: 300px;
+    width: 220px;
 }
 
 #experience {
@@ -1197,11 +1198,18 @@ nav .navbar-nav li:last-child {
 
 #blog .blog-content {
     position: relative;
-    padding: 25px 25px;
+    padding: 20px;
+    min-height: 200px;
 }
 
 .blog_img {
     position: relative;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+.blog_img img{
+    max-height: 300px;
 }
 
 .blog_date {
