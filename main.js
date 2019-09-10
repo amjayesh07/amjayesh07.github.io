@@ -44,7 +44,7 @@
 
     //typer //
     var foo = $('#typer');
-    foo.typer(['Web-designer', 'Graphics Desinger', 'Web-Developer']);
+    foo.typer(['Front-end Developer', 'Hybrid App Devloper', 'Web Designer']);
 
     //isotop js //
     var portfolioitems = $(".portfolios");
