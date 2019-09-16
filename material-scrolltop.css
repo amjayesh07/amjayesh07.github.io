@@ -79,7 +79,7 @@
 
 .material-scrolltop,
 .material-scrolltop::before {
-    background-image: url(../images/top-arrow.svg);
+    background-image: url(../images/arrowup.png);
     background-position: center 50%;
     background-repeat: no-repeat;
 }
